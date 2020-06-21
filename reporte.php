@@ -135,22 +135,21 @@
 
                 if(isset($_POST['btn_registrar']))
                 {
-                  $IDTipoReporte = $_POST['IDTipoReporte'];
-                  $Descripcion = $_POST['Descripcion'];
-                  $idEquipo = $_POST['idEquipo'];
-                  $horaRep = $_POST['horaRep'];
-                  $idArea = $_POST['idArea'];
-                  $fechaRep = $_POST['fechaRep'];
-                  $idCondReporte = $_POST['idCondReporte'];
-                  $IDUsuarioReporte = $_POST['IDUsuarioReporte'];
-                  $fechaReporteMantto = $_POST['fechaReporteMantto'];
-                  $idUsuarioAsig = $_POST['idUsuarioAsig'];
+                $IDTipoReporte = $_POST['IDTipoReporte'];
+                $Descripcion = $_POST['Descripcion'];
+                $idEquipo = $_POST['idEquipo'];
+                $horaRep = $_POST['horaRep'];
+                $idArea = $_POST['idArea'];
+                $fechaRep = $_POST['fechaRep'];
+                $idCondReporte = $_POST['idCondReporte'];
+                $IDUsuarioReporte = $_POST['IDUsuarioReporte'];
+                $fechaReporteMantto = $_POST['fechaReporteMantto'];
+                $idUsuarioAsig = $_POST['idUsuarioAsig'];
 
-                  sqlsrv_query($conn, "INSERT INTO Reporte (IDTipoReporte, Descripcion, idEquipo, horaRep, idArea, fechaRep, idCondReporte, IDUsuarioReporte, fechaReporteMantto, idUsuarioAsig) values ('$IDTipoReporte','$Descripcion','$idEquipo','$horaRep','$idArea','$fechaRep','$idCondReporte','$IDUsuarioReporte','$fechaReporteMantto','$idUsuarioAsig')");
-                  //sql_query($conexion, "INSERT INTO $tabla_db1 (IDTipoReporte,Descripcion,idEquipo) values ('$IDReporte','$IDTipoReporte','$Descripcion','$idEquipo')");      
+                  mysqli_query($conexion, "INSERT INTO $tabla_db1 (IDTipoReporte, Descripcion, idEquipo,horaRep,idArea,fechaRep,idCondReporte,IDUsuarioReporte,fechaReporteMantto,idUsuarioAsig) values ('$IDTipoReporte','$Descripcion','$idEquipo','$horaRep','$idArea','$fechaRep','$idCondReporte','$IDUsuarioReporte','$fechaReporteMantto','$idUsuarioAsig')");      
 
-                  echo "<br<br><br><br<br><br><font><center><b><h1>¡Reporte generado exitosamente!</h1></b></center></font>";
-                  echo "<br<br><br><br<br><br><font><center><b><h3>El reporte se completó de manera satisfactoria. Para generar otro reporte pulse el botón siguiente.</h3></b></center></font><br><br>";
+                  echo "<br><br><br><br<br><br><font><center><b><h1>¡Reporte generado exitosamente!</h1></b></center></font>";
+                  echo "<br><br><br><br<br><br><font><center><b><h3>El reporte se completó de manera satisfactoria. Para generar otro reporte pulse el botón siguiente.</h3></b></center></font><br><br>";
 
                 }
 
