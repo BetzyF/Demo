@@ -135,21 +135,21 @@
 
                 if(isset($_POST['btn_registrar']))
                 {
-                  $IDReporte = $_POST['IDReporte'];
-                  $IDTipoReporte = $_POST['IDTipoReporte'];
-                  $Descripcion = $_POST['Descripcion'];
-                  $idEquipo = $_POST['idEquipo'];
+                  $marca = $_POST['marca'];
+                  $idTelefono = $_POST['idTelefono'];
+                  $direccion = $_POST['direccion'];
 
-                  mysqli_query($conexion, "INSERT INTO $tabla_db1 (IDReporte,IDTipoReporte,Descripcion,idEquipo) values ('$IDReporte','$IDTipoReporte','$Descripcion','$idEquipo')");      
+                  sqlsrv_query($conn, "INSERT INTO Marca (@marca,@idTelefono,@direccion) values ('$marca','$idTelefono','$direccion')");
+                  //mysqli_query($conn, "INSERT INTO $tabla_db4 (marca,idTelefono,direccion) values ('$marca','$idTelefono','$direccion')");      
 
-                  echo "<br<br><br><br<br><br><font><center><b><h1>¡Reporte generado exitosamente!</h1></b></center></font>";
-                  echo "<br<br><br><br<br><br><font><center><b><h3>El reporte se completó de manera satisfactoria. Para generar otro reporte pulse el botón siguiente.</h3></b></center></font><br><br>";
+                  echo "<br<br><br><br<br><br><font><center><b><h1>¡Registro generado exitosamente!</h1></b></center></font>";
+                  echo "<br<br><br><br<br><br><font><center><b><h3>La marca se registró de manera satisfactoria. Para generar otro reporte pulse el botón siguiente.</h3></b></center></font><br><br>";
 
                 }
 
                 include("cerrar_conexion.php");
               ?>
-              <center><a href="empresas.html"><input type="button" value="Generar reporte" class="btn btn-success"></a></center>
+              <center><a href="empresas.html"><input type="button" value="Registrar marca" class="btn btn-success"></a></center>
             
                      
             </div>

@@ -135,7 +135,6 @@
 
                 if(isset($_POST['btn_registrar']))
                 {
-                  $IDEquipo = $_POST['IDEquipo'];
                   $NumeroSerie = $_POST['NumeroSerie'];
                   $Modelo = $_POST['Modelo'];
                   $IDNivelRiesgo = $_POST['IDNivelRiesgo'];
@@ -144,13 +143,14 @@
                   $nombre = $_POST['nombre'];
                   $descripcion = $_POST['descripcion'];
                   $FechaExpGarantia = $_POST['FechaExpGarantia'];
-                  $IdStatus = $_POST['IdStatus'];
-                  $nivelProridad = $_POST['nivelPrioridad'];
+                  $idStatus = $_POST['idStatus'];
+                  $nivelPrioridad = $_POST['nivelPrioridad'];
                   $idMarca = $_POST['idMarca'];
                   $idTipo = $_POST['idTipo'];
+                  $cantidad = $_POST['cantidad'];
                                
-
-                  mysqli_query($conexion, "INSERT INTO $tabla_db2 (IDEquipo,NumeroSerie,Modelo,IDNivelRiesgo,IDEquipoArea,claveCB,nombre,descripcion,FechaExpGarantia,IdStatus,nivelProridad,idMarca,idTipo,IDNivelRiesgo) values ('$IDEquipo','$NumeroSerie','$Modelo','$IDNivelRiesgo','$IDEquipoArea','$claveCB','$nombre','$descripcion','$FechaExpGarantia','$IdStatus','$nivelProridad','$idMarca','$idTipo','$IDNivelRiesgo')");      
+                  sqlsrv_query($conn, "INSERT INTO Equipo (@NumeroSerie,@Modelo,@IDNivelRiesgo,@IDEquipoArea,@claveCB,@nombre,@descripcion,@FechaExpGarantia,@idStatus,@nivelPrioridad,@idMarca,@idTipo,@IDNivelRiesgo,@cantidad) values ('$NumeroSerie','$Modelo','$IDNivelRiesgo','$IDEquipoArea','$claveCB','$nombre','$descripcion','$FechaExpGarantia','$idStatus','$nivelPrioridad','$idMarca','$idTipo','$IDNivelRiesgo','$cantidad')");
+                  //mysqli_query($conexion, "INSERT INTO $tabla_db2 (IDEquipo,NumeroSerie,Modelo,IDNivelRiesgo,IDEquipoArea,claveCB,nombre,descripcion,FechaExpGarantia,IdStatus,nivelPrioridad,idMarca,idTipo,IDNivelRiesgo,cantidad) values ('$IDEquipo','$NumeroSerie','$Modelo','$IDNivelRiesgo','$IDEquipoArea','$claveCB','$nombre','$descripcion','$FechaExpGarantia','$IdStatus','$nivelPrioridad','$idMarca','$idTipo','$IDNivelRiesgo','$cantidad')");      
 
                   echo "<br<br><br><br<br><br><font><center><b><h1>¡Equipo registrado exitosamente!</h1></b></center></font>";
                   echo "<br<br><br><br<br><br><font><center><b><h3>El equipo se registró de manera satisfactoria. Para generar otro reporte pulse el botón siguiente.</h3></b></center></font><br><br>";
